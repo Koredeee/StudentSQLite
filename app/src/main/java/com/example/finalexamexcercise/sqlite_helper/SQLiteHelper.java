@@ -10,9 +10,10 @@ import androidx.annotation.Nullable;
 
 import com.example.finalexamexcercise.model.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class SQLHelper extends SQLiteOpenHelper {
+public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "finalexamdb";
     private static final int DB_VERSION = 2;
@@ -23,7 +24,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     private static final String EMAIL_COLUMN = "studentemail";
     private static final String PHONE_COLUMN = "stduentphone";
 
-    public SQLHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public SQLiteHelper(@Nullable Context context) {
         super(context, name, factory, version);
     }
 
@@ -57,10 +58,29 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     public List<Student> getAllStudent(){
         SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor getQuery = db.rawQuery("SELECT * FROM " + STUDENT_TABLE, null);
+
+        List<Student> studentList = new ArrayList<>();
+
+        if(getQuery.moveToFirst()){
+            do {
+                String name = getQuery.getString(1);
+                String nim = getQuery.getString(2);
+                String email = getQuery.getString(3);
+                String phone = getQuery.getString(3);
+                Student newStudent = new Student(name, nim, email, phone);
+                studentList.add(newStudent);
+            } while (getQuery.moveToNext());
+        }
+        getQuery.close();
+
+        return  studentList;
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + STUDENT_TABLE);
+        onCreate(db);
     }
 }

@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalexamexcercise.sqlite_helper.SQLiteHelper;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InputFragment#newInstance} factory method to
@@ -30,6 +32,8 @@ public class InputFragment extends Fragment implements View.OnClickListener{
     private Button inputButton;
     private EditText nameField, nimField, emailField, phoneField;
     private TextView errorMsg;
+
+    SQLiteHelper helper;
 
     public InputFragment() {
         // Required empty public constructor
@@ -67,6 +71,8 @@ public class InputFragment extends Fragment implements View.OnClickListener{
         emailField = view.findViewById(R.id.emailField);
         phoneField = view.findViewById(R.id.phoneField);
         errorMsg = view.findViewById(R.id.errorMsg);
+
+        helper = new SQLiteHelper(getActivity());
         
 
         inputButton = view.findViewById(R.id.buttonInput);
@@ -107,7 +113,16 @@ public class InputFragment extends Fragment implements View.OnClickListener{
             else if (phone.length() < 6){
                 errorMsg.setText("Phone number must be at least 6 characters long!");
             } else {
-                errorMsg.setText("Data successfully inputed");
+                Boolean checkSuccess = helper.insertStudent(name, nim, email, phone);
+                if (checkSuccess){
+                    nameField.setText("");
+                    nimField.setText("");
+                    emailField.setText("");
+                    phoneField.setText("");
+                    errorMsg.setText("Data successfully inputed");
+                } else {
+                    errorMsg.setText("Data failed to input :(");
+                }
             }
 
 
