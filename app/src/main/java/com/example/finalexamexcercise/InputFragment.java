@@ -72,7 +72,7 @@ public class InputFragment extends Fragment implements View.OnClickListener{
         phoneField = view.findViewById(R.id.phoneField);
         errorMsg = view.findViewById(R.id.errorMsg);
 
-        helper = new SQLiteHelper(getContext());
+        helper = new SQLiteHelper(getActivity());
         
 
         inputButton = view.findViewById(R.id.buttonInput);

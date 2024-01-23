@@ -25,9 +25,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final String PHONE_COLUMN = "stduentphone";
 
     public SQLiteHelper(@Nullable Context context) {
-        super(context, name, factory, version);
+        super(context, DATABASE_NAME, null, DB_VERSION);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase db) {

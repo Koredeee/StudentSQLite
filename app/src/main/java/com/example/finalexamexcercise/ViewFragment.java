@@ -3,13 +3,18 @@ package com.example.finalexamexcercise;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.finalexamexcercise.adapter.StudentAdapter;
+import com.example.finalexamexcercise.model.Student;
 import com.example.finalexamexcercise.sqlite_helper.SQLiteHelper;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,6 +72,12 @@ public class ViewFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_view, container, false);
 
+        helper = new SQLiteHelper(getActivity());
+        studentView = view.findViewById(R.id.studentRecyclerView);
+
+        List<Student> studentList = helper.getAllStudent();
+        studentView.setLayoutManager(new LinearLayoutManager(getContext()));
+        studentView.setAdapter(new StudentAdapter(getContext(), studentList));
 
         return view;
     }
