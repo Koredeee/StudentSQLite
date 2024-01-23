@@ -3,10 +3,13 @@ package com.example.finalexamexcercise;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.finalexamexcercise.sqlite_helper.SQLiteHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,9 @@ public class ViewFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    RecyclerView studentView;
+    SQLiteHelper helper;
 
     public ViewFragment() {
         // Required empty public constructor
@@ -59,6 +65,9 @@ public class ViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_view, container, false);
+
+
+        return view;
     }
 }

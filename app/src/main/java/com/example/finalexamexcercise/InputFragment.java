@@ -72,7 +72,7 @@ public class InputFragment extends Fragment implements View.OnClickListener{
         phoneField = view.findViewById(R.id.phoneField);
         errorMsg = view.findViewById(R.id.errorMsg);
 
-        helper = new SQLiteHelper(getActivity());
+        helper = new SQLiteHelper(getContext());
         
 
         inputButton = view.findViewById(R.id.buttonInput);
@@ -124,10 +124,6 @@ public class InputFragment extends Fragment implements View.OnClickListener{
                     errorMsg.setText("Data failed to input :(");
                 }
             }
-
-
-            
-//            Toast.makeText(this.getContext(), "Data successfully inputed", Toast.LENGTH_SHORT).show();
         }
     }
 }

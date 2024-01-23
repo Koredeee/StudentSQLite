@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name : "
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/viewNameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM : "/>
+
+    <TextView
+        android:id="@+id/viewNIMTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testNIM"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email :"/>
+
+    <TextView
+        android:id="@+id/viewEmailTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testEmail"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nomor Telepon :"/>
+
+    <TextView
+        android:id="@+id/viewPhoneTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="testPhone"/>
+
+</LinearLayout>

@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity{
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit();
             }
 
             @Override
