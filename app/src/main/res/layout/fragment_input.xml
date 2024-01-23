@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input Student"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:paddingBottom="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/nameField"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Name"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIM"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/nimField"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="NIM"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/emailField"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Email"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Telepon"
+            android:textSize="20dp"/>
+
+        <EditText
+            android:id="@+id/phoneField"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/errorMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="15dp"/>
+
+        <Button
+            android:id="@+id/buttonInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input"
+            android:layout_marginTop="20dp"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
